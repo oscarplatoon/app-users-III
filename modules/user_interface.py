@@ -27,15 +27,19 @@ class UserInterface():
         return int(input("1. Add user\n2. Delete User\n3. View Users\n4. New Post\n5. Quit\n> "))
 
     def add_user(self):
+        user_type = input("Free User or Premium User?")
         name = input("Enter user name: ")
         email = input("Enter user email address: ")
         license = input("Enter user Driver's license: ")
+        if user_type == "Free User":
+            self.users.append(FreeUser(name, email, license))
+        elif user_type == "Premium User":
+            self.users.append(PremiumUser(name, email, license))
         self.users.append(User(name, email, license))
         print(f"User {name} added.")
 
     def delete_user(self):
-        license = input(
-            "Enter the driver's license number of the user to delete: ")
+        license = input("Enter the driver's license number of the user to delete: ")
         for i, user in enumerate(self.users):
             if license == user.get_license():
                 self.users.pop(i)

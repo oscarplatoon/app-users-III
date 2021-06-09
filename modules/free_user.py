@@ -8,6 +8,6 @@ class FreeUser(User):
         if len(self.user_posts) < 2:
             self.post_count += 1
             return super().set_post(user_post)
-        raise ValueError("Free users are only allowed two posts. You have exceeded your free posts.")
+        raise Exception("Free users are only allowed two posts. You have exceeded your free posts.")
 
 
