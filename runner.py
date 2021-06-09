@@ -1,1 +1,4 @@
-# Import and create your users here
+from modules.user_interface import UserInterface
+
+run_interface = UserInterface()
+
