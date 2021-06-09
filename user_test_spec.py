@@ -1,6 +1,7 @@
 import unittest
 from modules.user import User
 from modules.post import Post
+from modules.free_user import FreeUser
 
 class TestUser(unittest.TestCase):
     def setUp(self):
@@ -11,6 +12,13 @@ class TestUser(unittest.TestCase):
 
     def test_user_get_license(self):
         self.assertTrue(self.test_user.get_license(), "PADL123456")
+
+class TestFreeUser(unittest.TestCase):
+    def setUp(self):
+        self.test_free_user = FreeUser("Free Test Man", "freetest@mail.org", "PADL654321")
+
+    def test_user_inheritance(self):
+        self.assertTrue(self.test_free_user.get_license(), "PADL65321")
 
 class TestPost(unittest.TestCase):
     def setUp(self):
