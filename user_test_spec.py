@@ -13,12 +13,27 @@ class TestUser(unittest.TestCase):
     def test_user_get_license(self):
         self.assertTrue(self.test_user.get_license(), "PADL123456")
 
+    def test_user_set_post(self):
+        #To do
+        pass
+
 class TestFreeUser(unittest.TestCase):
     def setUp(self):
         self.test_free_user = FreeUser("Free Test Man", "freetest@mail.org", "PADL654321")
 
     def test_user_inheritance(self):
         self.assertTrue(self.test_free_user.get_license(), "PADL65321")
+
+    def test_user_post_limit(self):
+        test = FreeUser("Yo", "Dog", "Mudkips")
+        test.set_post("This is a post")
+        test.set_post("This is another post")
+        test.set_post("this should error")
+        print(test.post_count)
+
+class TestPremiumUser(unittest.TestCase):
+    def setUp(self):
+        self.test_prem_user = PremiumUser()
 
 class TestPost(unittest.TestCase):
     def setUp(self):

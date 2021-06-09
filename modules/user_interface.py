@@ -1,4 +1,6 @@
 from .user import User
+from .free_user import FreeUser
+from .premium_user import PremiumUser
 from .post import Post
 
 

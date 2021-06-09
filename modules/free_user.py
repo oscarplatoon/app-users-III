@@ -9,3 +9,5 @@ class FreeUser(User):
             self.post_count += 1
             return super().set_post(user_post)
         raise ValueError("Free users are only allowed two posts. You have exceeded your free posts.")
+
+

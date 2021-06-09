@@ -1,11 +1,12 @@
 from .post import Post
 
 class User:
-    def __init__(self, name, email, drivers_license):
+    def __init__(self, name, email, drivers_license, user_posts = [], post_count = 0):
         self.name = name
         self.email = email
         self.drivers_license = drivers_license
-        self.user_posts = []
+        self.user_posts = user_posts
+        self.post_count = 0
 
     def __str__(self):
         output = f"Name: {self.name}, Email Address: {self.email}, Driver's License: {self.drivers_license}\n"
