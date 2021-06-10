@@ -2,6 +2,7 @@ import csv
 import os.path
 
 from classes.User import User
+from classes.Post  import Posts
 
 my_path = os.path.abspath(os.path.dirname(__file__))
 path = os.path.join(my_path, "../data/user_info.csv")
@@ -9,6 +10,7 @@ path = os.path.join(my_path, "../data/user_info.csv")
 class Interface():
     def __init__(self):
         self.users = User.all_users()
+        self.posts = Posts.all_posts()
         self.run()
 
     def run(self):
@@ -18,7 +20,7 @@ class Interface():
             if input == 1:
                 self.add_user()
             elif input == 2:
-                self.delete_user()
+                self.add_post()
             elif input == 3:
                 self.view_users()
             elif input == 4:
@@ -43,9 +45,13 @@ class Interface():
 
 
     
-    def add_post():
-        post = input('Your post here:\n')
-        User.add_post(self, post)
+    def add_post(self):
+        post_data = {'name': 'user'}
+
+        post_data['name'] = input('Enter your name: \n')
+        post_data['post'] = input('Your post here: \n')
+        
+        Posts.add_post(self, post_data)
         
 
 
