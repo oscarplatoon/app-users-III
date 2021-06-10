@@ -1,1 +1,2 @@
-# Your PremiumUser class goes here
+class PremiumUser():
+  pass
