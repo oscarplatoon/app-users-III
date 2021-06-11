@@ -1,1 +1,3 @@
-# Import and create your users here
+from classes.Interface import Interface
+
+run_interface = Interface()
