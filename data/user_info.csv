@@ -1,5 +1,8 @@
-name,email,drivers_license
-Tom Brunstad, Trbrunstad@msn.com, R56789
-Tony Brunstad,Tzbrunstad@msn.com,R5678
-Gina,Grzappa@msn.com,R45645
-Donna Brunstad,DMG@msn.com,L43234
+name,email,drivers_license,is_premium
+Tom Brunstad, Trbrunstad@msn.com,R56789,False
+Tony Brunstad,Tzbrunstad@msn.com,R5678,False
+Gina,Grzappa@msn.com,R45645,False
+Donna Brunstad,DMG@msn.com,L43234,False
+Tom Prete,TrPrete@Platoon.com,C7890,False
+ankur,ak@,C567,True
+Vince,vzb@msn.com,1,True

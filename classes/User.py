@@ -8,10 +8,11 @@ user_info_path = os.path.join(my_path, "../data/user_info.csv")
 class User:
     users = []
 
-    def __init__(self, name, email, drivers_license):
+    def __init__(self, name, email, drivers_license, is_premium):
         self.name = name
         self.email = email
         self.drivers_license = drivers_license
+        self.is_premium = is_premium
 
     def __str__(self):
         return f"Name: {self.name}, Email Address: {self.email}, Driver's License: {self.drivers_license}"
@@ -25,7 +26,7 @@ class User:
             next(reader, None)
             for row in reader:
                 print(row)
-                users.append(User(row[0], row[1], row[2]))
+                users.append(User(row[0], row[1], row[2], row[3]))
                 # users.append(User(**dict(row)))
 
         # print(users)
@@ -37,23 +38,7 @@ class User:
             if account.id == str(id):
                 return account
         return None
-    
 
-
-    def add_user(self, user_data):
-        self.users.append(User(**dict(user_data)))
-        with open(user_info_path, 'w', newline='') as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames = ["name", "email", "drivers_license"])
-            writer.writeheader()
-            for user in self.users:
-                name=user.name
-                email=user.email
-                drivers_license=user.drivers_license
-                writer.writerow({'name': name,'email': email, 'drivers_license': drivers_license})
-
-    def view_users(self):
-        users = User.all_users()
-        print (self.name)
 
 
 # Vincent Brunstad, vzbrunstd@msn.com, R12345
